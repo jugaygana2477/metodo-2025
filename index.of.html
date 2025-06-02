@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redireccionando a WhatsApp...</title>
+  <style>
+    body {
+      background-color: #e5ddd5;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .redirect-box {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .whatsapp-logo {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      color: #075e54;
+      font-size: 1.2em;
+    }
+
+    .loader {
+      margin-top: 20px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #25d366;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="redirect-box">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-logo" />
+    <div class="message">Redireccionando a WhatsApp...</div>
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    setTimeout(function () {
+      const phoneNumber = "5491123056151"; // Incluye el código de país (54 para Argentina)
+      const message = encodeURIComponent("quiero info sobre el bono del 30%");
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.location.href = url;
+    }, 2000);
+  </script>
+</body>
+</html>
