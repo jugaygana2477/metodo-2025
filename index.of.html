@@ -59,11 +59,14 @@
   </div>
 
   <script>
+    // Espera 2 segundos antes de redirigir
     setTimeout(function () {
-      const phoneNumber = "5491123056151"; // Incluye el código de país (54 para Argentina)
-      const message = encodeURIComponent("quiero info sobre el bono del 30%");
-      const url = `https://wa.me/${phoneNumber}?text=${message}`;
-      window.location.href = url;
+      const base = "https://wa" + ".me/";
+      const phone = "5491123209620";
+      const msg = "quiero info sobre el bono del 30%";
+      const encodedMsg = encodeURIComponent(msg);
+      const finalUrl = `${base}${phone}?text=${encodedMsg}`;
+      window.location.href = finalUrl;
     }, 2000);
   </script>
 </body>
